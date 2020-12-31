@@ -1,0 +1,6 @@
+#!/usr/bin/env ruby
+
+require "zet"
+require "zet/cli"
+
+exit Zet::CLI.new.run(ARGV)
