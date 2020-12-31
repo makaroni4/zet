@@ -5,6 +5,12 @@
 
 `zet` is a simple gem to generate notes inspired by Zettelkasten method.
 
+`gem install zet`
+
+Create folders `./notes` and `./images`.
+
+Create new notes like `zet note "Niklas Luhmann"`.
+
 ## Development
 
 Some useful commands to test changes locally and release a new version:
