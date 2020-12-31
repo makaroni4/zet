@@ -25,12 +25,15 @@ module Zet
             if File.exists?(note_file)
               puts "This file already exists: #{note_file}! 🙀"
             else
-              FileUtils.open(note_file, "w") do |file|
-                template = File.read("note_teamplate.md")
-                template.gsub("# HEADLINE", note_name)
+              File.open(note_file, "w") do |file|
+                template = File.read(File.join(Dir.pwd, "note_template.md"))
+                template.gsub!("# HEADLINE", "# #{note_name}")
 
                 file.puts(template)
               end
+
+              system `code .`
+              system `code #{note_file}`
             end
           end
         else
@@ -57,7 +60,7 @@ module Zet
       slug = name.downcase.gsub(/\W/, "").split(" ").join("-")
       timestamp = Time.now.strftime("%Y%m%d%H%M")
 
-      File.join("notes", "#{timestamp}-#{slug}.md")
+      File.join(Dir.pwd, "notes", "#{timestamp}-#{slug}.md")
     end
   end
 end
