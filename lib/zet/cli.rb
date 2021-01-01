@@ -57,7 +57,7 @@ module Zet
     end
 
     def note_file(name)
-      slug = name.downcase.gsub(/\W/, "").split(" ").join("-")
+      slug = name.downcase.split(" ").map { |w| w.gsub(/\W/, "") }.join("-")
       timestamp = Time.now.strftime("%Y%m%d%H%M")
 
       File.join(Dir.pwd, "notes", "#{timestamp}-#{slug}.md")
