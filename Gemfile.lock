@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    imgzet (0.2.0)
+    imgzet (0.2.1)
       rmagick (~> 4)
 
 GEM

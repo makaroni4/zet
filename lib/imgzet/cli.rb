@@ -47,7 +47,7 @@ module Imgzet
 
       images = []
       Dir[File.join(folder, "**/*")].sort_by { |f| File.mtime(f) }.each do |image|
-        image_file_name = "#{temp_slug}-#{File.extname(image)}"
+        image_file_name = "#{temp_slug}#{File.extname(image)}"
         image_file = File.join(image_folder, image_file_name)
         FileUtils.cp(image, image_file)
         images.push(image_file)
@@ -63,9 +63,6 @@ module Imgzet
       end
 
       FileUtils.rm_rf(folder)
-
-      system `code .`
-      system `code #{note_file}`
     end
 
     def process_input_file(input_image_file)
