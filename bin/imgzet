@@ -1,0 +1,6 @@
+#!/usr/bin/env ruby
+
+require "imgzet"
+require "imgzet/cli"
+
+exit Imgzet::CLI.new.run(ARGV)

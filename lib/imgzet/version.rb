@@ -2,6 +2,6 @@
 
 # Module to keep the gem's version in. Make sure to bump it before release.
 #
-module Zet
+module Imgzet
   VERSION = "0.2.0".freeze
 end

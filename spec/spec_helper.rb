@@ -1,6 +1,6 @@
 require "bundler/setup"
 require "byebug"
-require "zet"
+require "imgzet"
 
 if ENV["TRAVIS"]
   require "coveralls"
